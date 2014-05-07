@@ -18,3 +18,8 @@ sw $s2, 0x54($s0)
 0xAC120036
 ```
 ###Simulation
+
+
+
+
+##TASK #3: Modified With ORI Instruction
