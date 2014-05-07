@@ -7,7 +7,7 @@ Write a MIPS assembly program that will initialize registers $S0 and $S1 with th
 addi $s0, $0, 44
 addi $s1, $0, -37 
 add $s2, $s0, $s1
-sw $s2, 0x54($s0)
+sw $s2, 0x54($0)
 ```
 
 ##TASK #2: Machine Code
@@ -17,7 +17,7 @@ sw $s2, 0x54($s0)
 | addi $s0, $0, 44  | 0000000000000000000000000000000 |  0x2010002C |
 | addi $s1, $0, -37 | 0000000000000000000000000000000 |  0x2011FFDB |
 | add $s2, $s0, $s1 | 0000000000000000000000000000000 |  0x02119020 |
-| sw $s2, 0x54($s0) | 0000000000000000000000000000000 |  0xAC120036 |
+| sw $s2, 0x54($0)  | 0000000000000000000000000000000 |  0xAC120036 |
 ###Simulation
 
 
