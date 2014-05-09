@@ -19,9 +19,17 @@ sw $s2, 0x54($0)
 | add $s2, $s0, $s1 | 0000 0010 0001 0001 1001 0000 0010 0000 |  0x02119020 |
 | sw $s2, 0x54($0)  | 1010 1100 0001 0010 0000 0000 0011 0110 |  0xAC120036 |
 ###Simulation
-![alt text](/Task2_sim.JPG "Task 2 Simulation")
+![alt text][logo2]
 
+[logo2]: /Task2_sim.JPG
 
 
 
 ##TASK #3: Modified With ORI Instruction
+```
+addi $s0, $0, 44
+addi $s1, $0, -37 
+add $s2, $s0, $s1
+ori $S3, $S2, x8000
+sw $s2, 0x54($0)
+```
