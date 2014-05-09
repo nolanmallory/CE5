@@ -33,3 +33,15 @@ add $s2, $s0, $s1
 ori $S3, $S2, x8000
 sw $s2, 0x54($0)
 ```
+![alt text][logo21]
+
+[logo21]: /Schematic.JPG
+![alt text][logo22]
+
+[logo22]: /ALU_Decoder.JPG
+![alt text][logo32]
+
+[logo32]: /Main_Decoder.JPG
+![alt text][logo23]
+
+[logo23]: /Task3_sim.JPG
