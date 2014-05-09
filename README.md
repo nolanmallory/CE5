@@ -24,7 +24,7 @@ sw $s2, 0x54($0)
 0x02119020     Adds 44 and -37 and stores them into $s2
 0xAC120036     Stores $s2 into the memory address x54
 ```
-###Simulation
+###Simulation Task 2
 ![alt text][logo2]
 
 [logo2]: /Task2_sim.JPG
@@ -52,6 +52,46 @@ sw $s2, 0x54($0)
 ![alt text][logo32]
 
 [logo32]: /Main_Decoder.JPG
+
+###VHDL Alteration
+The following code was written to implement the Zero Extend function required for the ORI
+```
+entity zeroext is -- zero extender
+  port(a: in  STD_LOGIC_VECTOR(15 downto 0);
+       y: out STD_LOGIC_VECTOR(31 downto 0));
+end;
+```
+
+```
+architecture behave of zeroext is
+begin
+  y <= X"0000" & a; 
+end;
+```
+This code was written to implement the 4 input MUX that was previously not required. To accomodate the Zero Extend the previous 2 input MUX had to be updated.
+```
+entity mux4 is -- 4-input multiplexer
+  generic(width: integer);
+  port(d0, d1, d2, d3: in  STD_LOGIC_VECTOR(width-1 downto 0);
+       s:      in  STD_LOGIC_VECTOR(1 downto 0);
+       y:      out STD_LOGIC_VECTOR(width-1 downto 0));
+end;
+```
+```
+architecture behave of mux4 is
+begin
+  y <= d0 when (s = "00") else 
+				d1 when (s = "01") else
+				d2 when (s = "10") else
+				d3;
+end;
+```
+The following was changed to allow for the ORI function that was previously unused
+`when "001101" => controls <= "1010000011"; --ORI`
+
+
+###Simulation Task 3
 ![alt text][logo23]
 
 [logo23]: /Task3_sim.JPG
+The wave form is correct because the value of 00008007 is visible in register 19.
